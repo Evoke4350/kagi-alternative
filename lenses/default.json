@@ -1,0 +1,17 @@
+{
+  "name": "default",
+  "block": [
+    "pinterest.com",
+    "quora.com"
+  ],
+  "boost": [
+    { "host": "wikipedia.org", "factor": 1.4 },
+    { "host": "archlinux.org", "factor": 1.3 },
+    { "host": "github.com", "factor": 1.2 },
+    { "host": "news.ycombinator.com", "factor": 1.2 }
+  ],
+  "downrank": [
+    { "host": "medium.com", "factor": 0.75 },
+    { "host": "stackoverflow.com", "factor": 0.95 }
+  ]
+}

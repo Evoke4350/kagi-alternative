@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/cache/
+lenses/local.json
+*.log
+.DS_Store

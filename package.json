@@ -1,0 +1,33 @@
+{
+  "name": "websearch",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "websearch": "bin/websearch.js"
+  },
+  "description": "Open-source privacy-respecting metasearch engine. Combines multiple public search APIs and free corpora into one re-ranked result list with per-user lenses.",
+  "homepage": "https://github.com/Evoke4350/kagi-alternative",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Evoke4350/kagi-alternative.git"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "search",
+    "metasearch",
+    "privacy",
+    "open-source",
+    "kagi",
+    "brave",
+    "mojeek",
+    "marginalia"
+  ]
+}
