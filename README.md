@@ -214,6 +214,31 @@ Register in [`src/adapters/index.js`](src/adapters/index.js). Restart. Done. The
 | `GET` | `/privacy` | Privacy posture |
 | `GET` | `/static/*` | Frontend assets |
 
+## MCP server — give your local LLM web search
+
+`bin/websearch-mcp.js` is a zero-dependency [MCP](https://modelcontextprotocol.io)
+stdio server exposing the full fan-out → dedupe → rank → lens pipeline as a
+`web_search` tool. Any MCP host (LM Studio, Claude Desktop, agent frameworks)
+can call it; tool-capable local models (e.g. Qwen3) get grounded answers with
+your ranking and your privacy posture.
+
+```jsonc
+// LM Studio mcp.json (or Claude Desktop claude_desktop_config.json)
+{
+  "mcpServers": {
+    "websearch": {
+      "command": "node",
+      "args": ["/absolute/path/to/websearch/bin/websearch-mcp.js"]
+    }
+  }
+}
+```
+
+Tool arguments: `query` (required), `limit` (default 8, cap 20), `lens`
+(any name from `lenses/`). Results come back as a numbered list of
+title / URL / snippet — LLM-friendly, explainable, no API keys.
+
+
 ## Configuration
 
 All via `.env` (loaded at startup) or environment variables.
